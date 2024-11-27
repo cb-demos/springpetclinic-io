@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 env:
   APP_NAME: spring-petclinic
-  NAMESPACE: snaqvi
+  NAMESPACE: mmaxwell
 jobs:
   evidence-collection:
     outputs:
