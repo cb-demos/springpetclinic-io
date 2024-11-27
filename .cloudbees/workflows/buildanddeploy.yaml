@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 env:
   APP_NAME: spring-petclinic
-  NAMESPACE: snaqvi
+  NAMESPACE: mmaxwell
 jobs:
   evidence-collection:
     outputs:
@@ -203,7 +203,7 @@ jobs:
     needs: 
       - evidence-collection
   exit_gate:
-    environment: snaqvi_DEV
+    environment: mmaxwell_DEV
     steps:
       - uses: cloudbees-io/publish-evidence-item@v1
         name: Publish Results
@@ -234,7 +234,7 @@ jobs:
     needs: 
       - deploy_dev
   deploy_dev:
-    environment: snaqvi_DEV
+    environment: mmaxwell_DEV
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
@@ -267,7 +267,7 @@ jobs:
     needs:
       - container-scan
   deploy_qa:
-    environment: snaqvi_QA
+    environment: mmaxwell_QA
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
@@ -315,7 +315,7 @@ jobs:
     needs: 
       - deploy_qa
   deploy_prod:
-    environment: snaqvi_PROD
+    environment: mmaxwell_PROD
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
